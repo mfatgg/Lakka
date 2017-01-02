@@ -1,6 +1,6 @@
 ################################################################################
-#      This file is part of OpenELEC - http://www.openelec.tv
-#      Copyright (C) 2009-2012 Stephan Raue (stephan@openelec.tv)
+#      Copyright (C) 2009-2010 OpenELEC.tv
+#      http://www.openelec.tv
 #
 #  This Program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -18,20 +18,15 @@
 #  http://www.gnu.org/copyleft/gpl.html
 ################################################################################
 
-PKG_NAME="RPi"
-PKG_VERSION=""
-PKG_REV="1"
-PKG_ARCH="any"
-PKG_LICENSE="GPL"
-PKG_SITE="https://github.com/lakkatv/Lakka"
-PKG_URL=""
-#PKG_DEPENDS_TARGET="retroarch lutro gpsp 2048 vecx dinothawr prboom beetle-pce handy picodrive pocketsnes nxengine fceumm gambatte stella fba libretro-ffmpeg retroarch-joypad-autoconfig core-info common-shaders"
-PKG_DEPENDS_TARGET="retroarch picodrive pocketsnes fceumm gambatte retroarch-joypad-autoconfig core-info common-shaders"
-PKG_PRIORITY="optional"
-PKG_SECTION="virtual"
-PKG_SHORTDESC="Lakka metapackage for RPi"
-PKG_LONGDESC=""
+# start sixad Daemon
+#
+# runlevels: openelec, textmode
 
-PKG_IS_ADDON="no"
-PKG_AUTORECONF="no"
+(
 
+  progress "Starting sixad Daemon"
+
+    sixad --start > /dev/null 2>&1 &
+
+
+)&
